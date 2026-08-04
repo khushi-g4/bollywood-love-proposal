@@ -9,51 +9,44 @@ const back=document.getElementById("petals-back");
 
 function createPetal(layer){
 
-const petal=document.createElement("div");
+    const petal=document.createElement("div");
 
-petal.className="petal";
+    petal.className="petal";
 
-const size=Math.random()*18+12;
+    const size=Math.random()*18+12;
 
-const duration=Math.random()*8+10;
+    const duration=Math.random()*8+10;
 
-const delay=Math.random()*3;
+    const delay=Math.random()*4;
 
-const left=Math.random()*100;
+    const left=Math.random()*100;
 
-const rotate=Math.random()*360;
+    const rotation=Math.random()*360;
 
-petal.style.width=size+"px";
-petal.style.height=size+"px";
+    petal.style.width=size+"px";
+    petal.style.height=size+"px";
 
-petal.style.left=left+"vw";
+    petal.style.left=left+"vw";
 
-petal.style.animationDuration=duration+"s";
+    petal.style.animationDuration=duration+"s";
 
-petal.style.animationDelay=delay+"s";
+    petal.style.animationDelay=delay+"s";
 
-petal.style.transform=`rotate(${rotate}deg)`;
+    petal.style.transform=`rotate(${rotation}deg)`;
 
-layer.appendChild(petal);
+    petal.style.opacity=(Math.random()*0.4+0.5);
 
-petal.addEventListener("animationend",()=>{
+    layer.appendChild(petal);
 
-petal.remove();
+    petal.addEventListener("animationend",()=>{
 
-createPetal(layer);
+        petal.remove();
 
-});
+        createPetal(layer);
 
-}
-
-/* Back Layer */
-
-for(let i=0;i<35;i++){
-
-createPetal(back);
+    });
 
 }
-
 /* Front Layer */
 
 for(let i=0;i<18;i++){
