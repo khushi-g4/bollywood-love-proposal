@@ -1019,3 +1019,340 @@ rotate(6deg);
 }
 
 }
+/* ==========================================================
+   HERO V2 ENHANCEMENTS
+========================================================== */
+
+/* Hero Background */
+
+.hero-bg{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at top,#1d0930 0%,transparent 40%),
+
+radial-gradient(circle at bottom,#12041a 0%,transparent 50%),
+
+linear-gradient(
+
+180deg,
+
+#030208,
+
+#09020f,
+
+#12041a,
+
+#1a0930
+
+);
+
+z-index:0;
+
+}
+
+/* Nebula */
+
+.nebula{
+
+position:absolute;
+
+width:1200px;
+
+height:1200px;
+
+left:50%;
+
+top:-500px;
+
+transform:translateX(-50%);
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,79,139,.12),
+
+transparent 70%
+
+);
+
+filter:blur(90px);
+
+animation:nebulaFloat 12s ease-in-out infinite alternate;
+
+}
+
+/* Moon */
+
+.moon{
+
+position:absolute;
+
+right:8%;
+
+top:100px;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle at 35% 35%,
+
+#ffffff,
+
+#efefef,
+
+#dcdcdc
+
+);
+
+box-shadow:
+
+0 0 70px rgba(255,255,255,.45),
+
+0 0 160px rgba(255,255,255,.18);
+
+overflow:hidden;
+
+z-index:2;
+
+animation:moonFloat 8s ease-in-out infinite;
+
+}
+
+/* Moon Texture */
+
+.moon img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+opacity:.18;
+
+mix-blend-mode:multiply;
+
+}
+
+/* Hero Content */
+
+.hero-content{
+
+position:relative;
+
+z-index:20;
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+padding-top:80px;
+
+}
+
+/* Title */
+
+.hero-content h1{
+
+font-size:6rem;
+
+line-height:1.15;
+
+text-shadow:
+
+0 0 20px rgba(255,255,255,.12);
+
+}
+
+/* Highlight */
+
+.hero-content h1 span{
+
+color:var(--primary);
+
+text-shadow:
+
+0 0 20px rgba(255,79,139,.45);
+
+}
+
+/* Subtitle */
+
+.hero-subtitle{
+
+letter-spacing:7px;
+
+text-transform:uppercase;
+
+font-size:.9rem;
+
+color:var(--accent);
+
+margin-bottom:20px;
+
+}
+
+/* Description */
+
+.hero-description{
+
+max-width:700px;
+
+margin:35px auto;
+
+font-size:1.08rem;
+
+line-height:2;
+
+color:#e6e6e6;
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin-top:45px;
+
+flex-wrap:wrap;
+
+}
+
+/* Scroll */
+
+.scroll-indicator{
+
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:20;
+
+}
+
+.scroll-indicator span{
+
+display:block;
+
+width:30px;
+
+height:55px;
+
+border:2px solid rgba(255,255,255,.55);
+
+border-radius:30px;
+
+position:relative;
+
+}
+
+.scroll-indicator span::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:10px;
+
+width:5px;
+
+height:10px;
+
+border-radius:50%;
+
+background:white;
+
+transform:translateX(-50%);
+
+animation:scrollMouse 2s infinite;
+
+}
+
+/* Animations */
+
+@keyframes moonFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+@keyframes nebulaFloat{
+
+0%{
+
+transform:translate(-50%,0);
+
+}
+
+100%{
+
+transform:translate(-50%,35px);
+
+}
+
+}
+
+@keyframes scrollMouse{
+
+0%{
+
+opacity:0;
+
+top:10px;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+top:28px;
+
+}
+
+}
