@@ -1,58 +1,72 @@
 /* ==========================================================
-   CHERRY BLOSSOM ENGINE
+   CINEMATIC CHERRY BLOSSOM ENGINE
 ========================================================== */
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-const front=document.getElementById("petals-front");
-const back=document.getElementById("petals-back");
+    const front = document.getElementById("petals-front");
+    const back = document.getElementById("petals-back");
 
-function createPetal(layer){
+    const petals = [
+        "assets/images/petals/petal1.webp",
+        "assets/images/petals/petal2.webp",
+        "assets/images/petals/petal3.webp",
+        "assets/images/petals/petal4.webp",
+        "assets/images/petals/petal5.webp"
+    ];
 
-    const petal=document.createElement("div");
+    function createPetal(layer){
 
-    petal.className="petal";
+        const petal = document.createElement("div");
 
-    const size=Math.random()*18+12;
+        petal.className = "petal";
 
-    const duration=Math.random()*8+10;
+        petal.style.backgroundImage =
+            `url(${petals[Math.floor(Math.random()*petals.length)]})`;
 
-    const delay=Math.random()*4;
+        const size = Math.random()*22 + 12;
 
-    const left=Math.random()*100;
+        petal.style.width = size+"px";
+        petal.style.height = size+"px";
 
-    const rotation=Math.random()*360;
+        petal.style.left = Math.random()*100+"vw";
 
-    petal.style.width=size+"px";
-    petal.style.height=size+"px";
+        petal.style.opacity = Math.random()*0.5 + 0.4;
 
-    petal.style.left=left+"vw";
+        petal.style.animationDuration =
+            (Math.random()*8+10)+"s";
 
-    petal.style.animationDuration=duration+"s";
+        petal.style.animationDelay =
+            Math.random()*3+"s";
 
-    petal.style.animationDelay=delay+"s";
+        petal.style.setProperty("--rotate",
+            Math.random()*720+"deg");
 
-    petal.style.transform=`rotate(${rotation}deg)`;
+        petal.style.setProperty("--drift",
+            (Math.random()*250-125)+"px");
 
-    petal.style.opacity=(Math.random()*0.4+0.5);
+        layer.appendChild(petal);
 
-    layer.appendChild(petal);
+        petal.addEventListener("animationend",()=>{
 
-    petal.addEventListener("animationend",()=>{
+            petal.remove();
 
-        petal.remove();
+            createPetal(layer);
 
-        createPetal(layer);
+        });
 
-    });
+    }
 
-}
-/* Front Layer */
+    for(let i=0;i<45;i++){
 
-for(let i=0;i<18;i++){
+        createPetal(back);
 
-createPetal(front);
+    }
 
-}
+    for(let i=0;i<22;i++){
+
+        createPetal(front);
+
+    }
 
 });
