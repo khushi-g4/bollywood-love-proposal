@@ -5,58 +5,66 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="A Bollywood Love Story made with love ❤️">
+          content="A Bollywood Love Story made with love ❤️">
 
-    <title>Forever Begins Today ❤️</title>
+    <title>
+        Forever Begins Today ❤️
+    </title>
 
     <!-- Google Fonts -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <!-- Font Awesome -->
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
     <!-- AOS -->
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
-        rel="stylesheet">
+          rel="stylesheet">
 
     <!-- CSS -->
 
     <link rel="stylesheet" href="css/reset.css">
-
     <link rel="stylesheet" href="css/variables.css">
-
     <link rel="stylesheet" href="css/main.css">
 
     <link rel="stylesheet" href="css/navbar.css">
-
     <link rel="stylesheet" href="css/hero.css">
-
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/letter.css">
+    <link rel="stylesheet" href="css/reasons.css">
+    <link rel="stylesheet" href="css/future.css">
+    <link rel="stylesheet" href="css/proposal.css">
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/countdown.css">
+    <link rel="stylesheet" href="css/effects.css">
     <link rel="stylesheet" href="css/animations.css">
-
+    <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
 <body>
 
-<!-- ========================================= -->
-
+<!-- ====================================== -->
 <!-- LOADER -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <div id="loader">
 
@@ -74,11 +82,9 @@
 
 </div>
 
-<!-- ========================================= -->
-
-<!-- INTRO SCREEN -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
+<!-- INTRO -->
+<!-- ====================================== -->
 
 <section id="intro">
 
@@ -106,7 +112,7 @@
 
         <h2>
 
-            Khushi ❤️ Your Boyfriend
+            Khushi ❤️ Vishal
 
         </h2>
 
@@ -120,11 +126,11 @@
 
 </section>
 
-<!-- ========================================= -->
-
+<!-- ====================================== -->
 <!-- NAVBAR -->
+<!-- ====================================== -->
 
-<!-- ========================================= -->
+<header>
 
 <nav>
 
@@ -136,69 +142,35 @@
 
     <ul>
 
-        <li>
+        <li><a href="#home">Home</a></li>
 
-            <a href="#home">
+        <li><a href="#story">Story</a></li>
 
-                Home
+        <li><a href="#gallery">Gallery</a></li>
 
-            </a>
+        <li><a href="#letter">Letter</a></li>
 
-        </li>
-
-        <li>
-
-            <a href="#story">
-
-                Story
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#gallery">
-
-                Gallery
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#letter">
-
-                Letter
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="#proposal">
-
-                Proposal
-
-            </a>
-
-        </li>
+        <li><a href="#proposal">Proposal</a></li>
 
     </ul>
 
+    <div class="hamburger">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
 </nav>
 
-<!-- ========================================= -->
+</header>
 
+<!-- ====================================== -->
 <!-- HERO -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <section id="home">
-
-    <!-- Background -->
 
     <div class="moon"></div>
 
@@ -211,8 +183,6 @@
     <div class="rose-petals"></div>
 
     <div class="hero-overlay"></div>
-
-    <!-- Hero Content -->
 
     <div class="hero-content">
 
@@ -248,15 +218,13 @@
 
         <a href="#story"
 
-            class="hero-btn">
+           class="hero-btn">
 
-            Start Reading
+            Begin Our Story
 
         </a>
 
     </div>
-
-    <!-- Scroll Indicator -->
 
     <div class="scroll-down">
 
@@ -266,49 +234,49 @@
 
 </section>
 
-<!-- ========================================= -->
-
+<!-- ====================================== -->
 <!-- MUSIC -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <audio id="bgMusic" loop>
 
-    <source
-
-        src="assets/music/background.mp3"
-
-        type="audio/mpeg">
+    <source src="assets/music/background.mp3"
+            type="audio/mpeg">
 
 </audio>
 
-<button id="musicBtn">
+<div class="music-player">
 
-    <i class="fa-solid fa-music"></i>
+    <button id="musicBtn">
 
-</button>
+        <i class="fa-solid fa-music"></i>
 
-<!-- ========================================= -->
+    </button>
 
-<!-- STORY STARTS HERE -->
+    <div class="music-tooltip">
 
-<!-- ========================================= -->
+        Play Our Song ❤️
+
+    </div>
+
+</div>
+<!-- ====================================== -->
+<!-- OUR STORY -->
+<!-- ====================================== -->
 
 <section id="story">
 
     <div class="section-title">
 
-        <h2>
+        <h2 data-aos="fade-up">
 
             Our Story
 
         </h2>
 
-        <p>
+        <p data-aos="fade-up">
 
-            Every beautiful memory deserves
-
-            to be remembered forever.
+            Every beautiful love story is made of little moments.
 
         </p>
 
@@ -316,26 +284,22 @@
 
     <div class="timeline">
 
-        <!-- Timeline cards will come in Part 2 -->
+        <!-- 1 -->
 
-    </div>
-
-</section>
-        <!-- Timeline Item 1 -->
-
-        <div class="timeline-item left" data-aos="fade-right">
+        <div class="timeline-item left"
+             data-aos="fade-right">
 
             <div class="timeline-content">
 
                 <h3>✨ The Day We Met</h3>
 
-                <span>Beginning of Forever</span>
+                <span>The Beginning</span>
 
                 <p>
 
-                    It all started with a simple conversation,
-                    but little did we know that it would become
-                    the most beautiful chapter of our lives.
+                    We didn't know it then,
+                    but destiny had already written our names
+                    in the same chapter.
 
                 </p>
 
@@ -343,21 +307,22 @@
 
         </div>
 
-        <!-- Timeline Item 2 -->
+        <!-- 2 -->
 
-        <div class="timeline-item right" data-aos="fade-left">
+        <div class="timeline-item right"
+             data-aos="fade-left">
 
             <div class="timeline-content">
 
-                <h3>❤️ First Smile</h3>
+                <h3>❤️ Endless Conversations</h3>
 
-                <span>Butterflies Everywhere</span>
+                <span>Favourite Habit</span>
 
                 <p>
 
-                    That smile...
-                    the one that still makes my heart skip
-                    a beat every single time.
+                    Hours felt like minutes.
+                    Every conversation made me
+                    fall a little more in love.
 
                 </p>
 
@@ -365,21 +330,21 @@
 
         </div>
 
-        <!-- Timeline Item 3 -->
+        <!-- 3 -->
 
-        <div class="timeline-item left" data-aos="fade-right">
+        <div class="timeline-item left"
+             data-aos="fade-right">
 
             <div class="timeline-content">
 
-                <h3>📞 Endless Conversations</h3>
+                <h3>🌙 Every Late Night</h3>
 
-                <span>Our Favourite Habit</span>
+                <span>Our Safe Place</span>
 
                 <p>
 
-                    We talked for hours,
-                    laughed endlessly,
-                    and somehow time always flew by.
+                    No matter how difficult the day was,
+                    talking to you always felt like home.
 
                 </p>
 
@@ -387,9 +352,10 @@
 
         </div>
 
-        <!-- Timeline Item 4 -->
+        <!-- 4 -->
 
-        <div class="timeline-item right" data-aos="fade-left">
+        <div class="timeline-item right"
+             data-aos="fade-left">
 
             <div class="timeline-content">
 
@@ -399,8 +365,9 @@
 
                 <p>
 
-                    Every day with you feels like
-                    another beautiful scene from our movie.
+                    Every day,
+                    I still choose you.
+                    Every heartbeat still whispers your name.
 
                 </p>
 
@@ -412,25 +379,23 @@
 
 </section>
 
-<!-- ========================================= -->
-
+<!-- ====================================== -->
 <!-- GALLERY -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <section id="gallery">
 
     <div class="section-title">
 
-        <h2>
+        <h2 data-aos="fade-up">
 
             Our Favourite Memories
 
         </h2>
 
-        <p>
+        <p data-aos="fade-up">
 
-            Every picture tells a story.
+            Every picture tells our story.
 
         </p>
 
@@ -439,56 +404,54 @@
     <div class="gallery-grid">
 
         <div class="gallery-card">
-
-            <img src="assets/images/gallery/photo1.jpg">
-
+            <img src="assets/images/gallery/photo1.jpg" alt="">
         </div>
 
         <div class="gallery-card">
-
-            <img src="assets/images/gallery/photo2.jpg">
-
+            <img src="assets/images/gallery/photo2.jpg" alt="">
         </div>
 
         <div class="gallery-card">
-
-            <img src="assets/images/gallery/photo3.jpg">
-
+            <img src="assets/images/gallery/photo3.jpg" alt="">
         </div>
 
         <div class="gallery-card">
-
-            <img src="assets/images/gallery/photo4.jpg">
-
+            <img src="assets/images/gallery/photo4.jpg" alt="">
         </div>
 
         <div class="gallery-card">
-
-            <img src="assets/images/gallery/photo5.jpg">
-
+            <img src="assets/images/gallery/photo5.jpg" alt="">
         </div>
 
         <div class="gallery-card">
+            <img src="assets/images/gallery/photo6.jpg" alt="">
+        </div>
 
-            <img src="assets/images/gallery/photo6.jpg">
+        <div class="gallery-card">
+            <img src="assets/images/gallery/photo7.jpg" alt="">
+        </div>
 
+        <div class="gallery-card">
+            <img src="assets/images/gallery/photo8.jpg" alt="">
+        </div>
+
+        <div class="gallery-card">
+            <img src="assets/images/gallery/photo9.jpg" alt="">
         </div>
 
     </div>
 
 </section>
 
-<!-- ========================================= -->
-
+<!-- ====================================== -->
 <!-- LOVE LETTER -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <section id="letter">
 
     <div class="section-title">
 
-        <h2>
+        <h2 data-aos="fade-up">
 
             A Letter To You
 
@@ -496,49 +459,72 @@
 
     </div>
 
-    <div class="letter-box">
+    <div class="letter-box"
+         data-aos="zoom-in">
 
         <h3>
 
-            My Love,
+            My Dearest Vishal,
 
         </h3>
 
         <p>
 
-            If someone asked me what happiness looked like,
-
-            I'd simply show them you.
-
-        </p>
-
-        <p>
-
-            Thank you for loving me,
-
-            understanding me,
-
-            believing in me,
-
-            and making ordinary days feel magical.
+            If someone asked me what love looked like,
+            I would simply show them you.
 
         </p>
 
         <p>
 
-            No matter where life takes us,
-
-            my heart will always find its way back to you.
+            Thank you for every smile,
+            every laugh,
+            every late-night conversation,
+            every little effort,
+            and every moment that made me feel loved.
 
         </p>
 
         <p>
 
-            Forever yours,
+            Life isn't perfect.
+
+            We aren't perfect.
+
+            But somehow,
+            whenever I'm with you,
+            everything feels exactly the way it's supposed to.
+
+        </p>
+
+        <p>
+
+            I don't know what tomorrow looks like...
+
+            But I know one thing.
+
+            I want every tomorrow to have you in it.
+
+        </p>
+
+        <p>
+
+            I promise to love you,
+            support you,
+            annoy you,
+            tease you,
+            protect you,
+            and stand beside you...
+
+            through every chapter of life.
 
         </p>
 
         <h2>
+
+            Forever Yours,
+
+            <br>
 
             ❤️ Khushi
 
@@ -547,96 +533,107 @@
     </div>
 
 </section>
-
-<!-- ========================================= -->
-
-<!-- REASONS -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
+<!-- REASONS I LOVE YOU -->
+<!-- ====================================== -->
 
 <section id="reasons">
 
     <div class="section-title">
 
-        <h2>
+        <h2 data-aos="fade-up">
 
-            10 Reasons I Love You
+            10 Reasons I Love You ❤️
 
         </h2>
+
+        <p data-aos="fade-up">
+
+            Although honestly... I could never fit all the reasons on one page.
+
+        </p>
 
     </div>
 
     <div class="reason-grid">
 
         <div class="reason-card">
-
-            ❤️ Your Smile
-
+            <div class="number">01</div>
+            <div class="icon">❤️</div>
+            <h3>Your Smile</h3>
+            <p>It makes even my worst days feel beautiful.</p>
         </div>
 
         <div class="reason-card">
-
-            🌙 Your Voice
-
+            <div class="number">02</div>
+            <div class="icon">🌙</div>
+            <h3>Your Voice</h3>
+            <p>No matter how stressed I am, hearing you makes me feel calm.</p>
         </div>
 
         <div class="reason-card">
-
-            🌸 Your Kindness
-
+            <div class="number">03</div>
+            <div class="icon">✨</div>
+            <h3>Your Kindness</h3>
+            <p>You have the biggest heart of anyone I've ever known.</p>
         </div>
 
         <div class="reason-card">
-
-            🤍 Your Patience
-
+            <div class="number">04</div>
+            <div class="icon">🤍</div>
+            <h3>Your Patience</h3>
+            <p>Thank you for staying beside me even when things get difficult.</p>
         </div>
 
         <div class="reason-card">
-
-            💕 The Way You Care
-
+            <div class="number">05</div>
+            <div class="icon">🌹</div>
+            <h3>You Make Me Laugh</h3>
+            <p>Every laugh with you becomes one of my favourite memories.</p>
         </div>
 
         <div class="reason-card">
-
-            🌹 Your Hugs
-
+            <div class="number">06</div>
+            <div class="icon">💖</div>
+            <h3>You Believe In Me</h3>
+            <p>Sometimes you believe in me more than I believe in myself.</p>
         </div>
 
         <div class="reason-card">
-
-            💖 Our Memories
-
+            <div class="number">07</div>
+            <div class="icon">🫂</div>
+            <h3>Your Comfort</h3>
+            <p>Being with you always feels like home.</p>
         </div>
 
         <div class="reason-card">
-
-            ✨ You Understand Me
-
+            <div class="number">08</div>
+            <div class="icon">🌍</div>
+            <h3>Our Memories</h3>
+            <p>I wouldn't trade our moments for anything in the world.</p>
         </div>
 
         <div class="reason-card">
-
-            💍 Our Future
-
+            <div class="number">09</div>
+            <div class="icon">💍</div>
+            <h3>Our Future</h3>
+            <p>I genuinely can't imagine my future without you in it.</p>
         </div>
 
         <div class="reason-card">
-
-            ❤️ Simply Because You're You
-
+            <div class="number">10</div>
+            <div class="icon">❤️</div>
+            <h3>Simply You</h3>
+            <p>Because you're Vishal... and that's more than enough.</p>
         </div>
 
     </div>
 
 </section>
 
-<!-- ========================================= -->
-
-<!-- FUTURE -->
-
-<!-- ========================================= -->
+<!-- ====================================== -->
+<!-- OUR FUTURE -->
+<!-- ====================================== -->
 
 <section id="future">
 
@@ -650,7 +647,7 @@
 
         <p>
 
-            Dreams we will turn into memories.
+            Dreams that I hope become memories.
 
         </p>
 
@@ -662,11 +659,9 @@
 
             🎓
 
-            <h3>
+            <h3>Graduation</h3>
 
-                Graduation
-
-            </h3>
+            <p>Cheering for each other through every success.</p>
 
         </div>
 
@@ -674,11 +669,9 @@
 
             ✈️
 
-            <h3>
+            <h3>Travelling Together</h3>
 
-                Travel Together
-
-            </h3>
+            <p>Exploring beautiful places hand in hand.</p>
 
         </div>
 
@@ -686,11 +679,9 @@
 
             🏡
 
-            <h3>
+            <h3>Our Dream Home</h3>
 
-                Our Dream Home
-
-            </h3>
+            <p>A place filled with laughter, love and peace.</p>
 
         </div>
 
@@ -698,20 +689,19 @@
 
             💍
 
-            <h3>
+            <h3>Forever</h3>
 
-                Forever
-
-            </h3>
+            <p>Growing old together, one day at a time.</p>
 
         </div>
 
     </div>
 
 </section>
-<!-- ========================================= -->
-<!-- PROPOSAL SECTION -->
-<!-- ========================================= -->
+
+<!-- ====================================== -->
+<!-- PROPOSAL -->
+<!-- ====================================== -->
 
 <section id="proposal">
 
@@ -719,37 +709,45 @@
 
     <div class="proposal-overlay"></div>
 
-    <div class="proposal-content" data-aos="zoom-in">
+    <div class="proposal-moon"></div>
+
+    <div class="proposal-content">
 
         <h3>
 
-            In Every Lifetime...
+            Every Love Story Has A Favourite Chapter...
 
         </h3>
 
         <h1>
 
-            I'd Still Choose You ❤️
+            Mine Is You ❤️
 
         </h1>
 
         <p>
 
-            If I had the chance to live a thousand lives,
+            Every smile,
 
-            I'd search every single one
+            every call,
 
-            just to find you again.
+            every little fight,
+
+            every "I miss you",
+
+            every memory...
+
+            has only made me love you more.
 
         </p>
 
         <h2>
 
-            Will You Continue
+            Will u be forever mine
 
-            This Beautiful Journey
+            <br>
 
-            With Me?
+            at all cost?
 
         </h2>
 
@@ -769,13 +767,19 @@
 
         </div>
 
+        <div class="final-quote">
+
+            Forever begins with one answer...
+
+        </div>
+
     </div>
 
 </section>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- CELEBRATION -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <section id="celebration">
 
@@ -789,9 +793,11 @@
 
         <p>
 
-            Thank you for making my world
+            Thank you for being my favourite person,
 
-            brighter every single day.
+            my safest place,
+
+            and my greatest blessing.
 
         </p>
 
@@ -799,9 +805,9 @@
 
 </section>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- COUNTDOWN -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <section id="countdown">
 
@@ -809,9 +815,15 @@
 
         <h2>
 
-            Time Together
+            Since 7 February 2026 ❤️
 
         </h2>
+
+        <p>
+
+            Every second with you is precious.
+
+        </p>
 
     </div>
 
@@ -819,73 +831,52 @@
 
         <div class="counter-card">
 
-            <h1 id="years">
+            <h1 id="years">0</h1>
 
-                0
-
-            </h1>
-
-            <span>
-
-                Years
-
-            </span>
+            <span>Years</span>
 
         </div>
 
         <div class="counter-card">
 
-            <h1 id="months">
+            <h1 id="months">0</h1>
 
-                0
-
-            </h1>
-
-            <span>
-
-                Months
-
-            </span>
+            <span>Months</span>
 
         </div>
 
         <div class="counter-card">
 
-            <h1 id="days">
+            <h1 id="days">0</h1>
 
-                0
+            <span>Days</span>
 
-            </h1>
+        </div>
 
-            <span>
+        <div class="counter-card">
 
-                Days
+            <h1 id="hours">0</h1>
 
-            </span>
+            <span>Hours</span>
 
         </div>
 
     </div>
 
+    <div class="countdown-quote">
+
+        <h3>
+
+            Every second spent with you is my favourite.
+
+        </h3>
+
+    </div>
+
 </section>
-
-<!-- ========================================= -->
-<!-- MUSIC CONTROL -->
-<!-- ========================================= -->
-
-<div class="music-player">
-
-    <button id="musicToggle">
-
-        <i class="fa-solid fa-music"></i>
-
-    </button>
-
-</div>
-
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- LIGHTBOX -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <div id="lightbox">
 
@@ -895,45 +886,47 @@
 
     </span>
 
-    <img id="lightbox-img">
+    <img id="lightbox-img"
+         src=""
+         alt="Memory">
 
 </div>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- CONFETTI -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <div id="confetti-container"></div>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- FIREWORKS -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <div id="fireworks-container"></div>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- FLOATING HEARTS -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <div class="floating-heart-container"></div>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- ROSE PETALS -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <div class="petal-container"></div>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- CUSTOM CURSOR -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <div class="cursor"></div>
 
-<div class="cursor2"></div>
+<div class="cursor-ring"></div>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- FOOTER -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <footer>
 
@@ -946,7 +939,6 @@
     <p>
 
         Every heartbeat of mine
-
         whispers your name.
 
     </p>
@@ -954,14 +946,15 @@
     <p>
 
         Made with ❤️ by Khushi
+        for Vishal
 
     </p>
 
 </footer>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- JAVASCRIPT LIBRARIES -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
@@ -971,7 +964,9 @@ AOS.init({
 
     duration:1200,
 
-    once:false
+    once:false,
+
+    offset:120
 
 });
 
@@ -979,23 +974,33 @@ AOS.init({
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-<!-- ========================================= -->
+<!-- ====================================== -->
 <!-- CUSTOM JAVASCRIPT -->
-<!-- ========================================= -->
+<!-- ====================================== -->
 
-<script src="js/app.js"></script>
-
-<script src="js/navbar.js"></script>
+<script src="js/loader.js"></script>
 
 <script src="js/intro.js"></script>
 
-<script src="js/timeline.js"></script>
+<script src="js/navbar.js"></script>
+
+<script src="js/smoothScroll.js"></script>
+
+<script src="js/particles.js"></script>
+
+<script src="js/stars.js"></script>
+
+<script src="js/cursor.js"></script>
 
 <script src="js/gallery.js"></script>
 
-<script src="js/music.js"></script>
+<script src="js/timeline.js"></script>
+
+<script src="js/typewriter.js"></script>
 
 <script src="js/countdown.js"></script>
+
+<script src="js/music.js"></script>
 
 <script src="js/proposal.js"></script>
 
@@ -1003,9 +1008,9 @@ AOS.init({
 
 <script src="js/fireworks.js"></script>
 
-<script src="js/cursor.js"></script>
+<script src="js/easterEgg.js"></script>
 
-<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 
