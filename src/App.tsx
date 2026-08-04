@@ -1,10 +1,14 @@
+import Layout from "./components/Layout/Layout";
+
 function App() {
   return (
-    <main className="w-screen h-screen flex items-center justify-center bg-slate-950">
-      <h1 className="text-5xl font-bold text-pink-400">
-        Forever Begins Today ❤️
-      </h1>
-    </main>
+    <Layout>
+      <div className="flex h-screen items-center justify-center">
+        <h1 className="text-6xl font-bold text-pink-400">
+          Forever Begins Today ❤️
+        </h1>
+      </div>
+    </Layout>
   );
 }
 
