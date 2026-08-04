@@ -2,7 +2,7 @@ import { Float, Sphere } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 
-import moonTexture from "../../assets/images/moon.jpeg";
+import moonTexture from "../../assets/images/moon.jpg";
 
 export default function Moon() {
   const texture = useLoader(TextureLoader, moonTexture);
