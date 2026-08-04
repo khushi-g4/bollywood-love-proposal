@@ -1,103 +1,65 @@
-/* ==========================================
-   PARTICLES.JS
-   Floating Hearts & Rose Petals
-========================================== */
+/* ==========================================================
+   CHERRY BLOSSOM ENGINE
+========================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
 
-    const heartContainer =
-        document.querySelector(".floating-hearts") ||
-        document.querySelector(".floating-heart-container");
+const front=document.getElementById("petals-front");
+const back=document.getElementById("petals-back");
 
-    const petalContainer =
-        document.querySelector(".rose-petals") ||
-        document.querySelector(".petal-container");
+function createPetal(layer){
 
-    /* ===========================
-       FLOATING HEARTS
-    =========================== */
+const petal=document.createElement("div");
 
-    function createHeart(){
+petal.className="petal";
 
-        if(!heartContainer) return;
+const size=Math.random()*18+12;
 
-        const heart = document.createElement("div");
+const duration=Math.random()*8+10;
 
-        heart.innerHTML = "❤️";
+const delay=Math.random()*3;
 
-        heart.style.position = "absolute";
+const left=Math.random()*100;
 
-        heart.style.left = Math.random() * 100 + "%";
+const rotate=Math.random()*360;
 
-        heart.style.bottom = "-40px";
+petal.style.width=size+"px";
+petal.style.height=size+"px";
 
-        heart.style.fontSize =
-            (16 + Math.random() * 20) + "px";
+petal.style.left=left+"vw";
 
-        heart.style.opacity = Math.random() * .6 + .3;
+petal.style.animationDuration=duration+"s";
 
-        heart.style.pointerEvents = "none";
+petal.style.animationDelay=delay+"s";
 
-        heart.style.animation =
-            "floatingHeart " +
-            (8 + Math.random() * 6) +
-            "s linear forwards";
+petal.style.transform=`rotate(${rotate}deg)`;
 
-        heartContainer.appendChild(heart);
+layer.appendChild(petal);
 
-        setTimeout(() => {
+petal.addEventListener("animationend",()=>{
 
-            heart.remove();
+petal.remove();
 
-        },15000);
+createPetal(layer);
 
-    }
+});
 
-    /* ===========================
-       ROSE PETALS
-    =========================== */
+}
 
-    function createPetal(){
+/* Back Layer */
 
-        if(!petalContainer) return;
+for(let i=0;i<35;i++){
 
-        const petal = document.createElement("div");
+createPetal(back);
 
-        petal.innerHTML = "🌹";
+}
 
-        petal.style.position = "absolute";
+/* Front Layer */
 
-        petal.style.left =
-            Math.random() * 100 + "%";
+for(let i=0;i<18;i++){
 
-        petal.style.top = "-50px";
+createPetal(front);
 
-        petal.style.fontSize =
-            (18 + Math.random()*14) + "px";
-
-        petal.style.pointerEvents = "none";
-
-        petal.style.animation =
-            "fallingPetal " +
-            (10 + Math.random()*8) +
-            "s linear forwards";
-
-        petalContainer.appendChild(petal);
-
-        setTimeout(()=>{
-
-            petal.remove();
-
-        },18000);
-
-    }
-
-    /* ===========================
-       CREATE CONTINUOUSLY
-    =========================== */
-
-    setInterval(createHeart,900);
-
-    setInterval(createPetal,1600);
+}
 
 });
