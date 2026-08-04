@@ -6,7 +6,7 @@ function App() {
     <Layout>
       <Background />
 
-      <div className="flex h-screen items-center justify-center">
+      <div className="relative z-10 flex h-screen items-center justify-center">
         <h1 className="text-6xl font-bold text-pink-400">
           Forever Begins Today ❤️
         </h1>
