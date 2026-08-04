@@ -1,0 +1,859 @@
+/* ==========================================
+   ANIMATIONS.CSS
+   Part 1
+========================================== */
+
+/* ===========================
+   FADE UP
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   FADE IN
+=========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ===========================
+   ZOOM
+=========================== */
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   HEARTBEAT
+=========================== */
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    25%{
+
+        transform:scale(1.12);
+
+    }
+
+    50%{
+
+        transform:scale(1);
+
+    }
+
+    75%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   FLOAT
+=========================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   BOUNCE
+=========================== */
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/* ===========================
+   TWINKLE
+=========================== */
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.25;
+
+    }
+
+}
+
+/* ===========================
+   MOON GLOW
+=========================== */
+
+@keyframes moonGlow{
+
+    0%{
+
+        box-shadow:
+
+        0 0 60px rgba(255,255,255,.35);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+        0 0 110px rgba(255,255,255,.6);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+        0 0 60px rgba(255,255,255,.35);
+
+    }
+
+}
+
+/* ===========================
+   CLOUDS
+=========================== */
+
+@keyframes cloudMove{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:1800px 0;
+
+    }
+
+}
+
+/* ===========================
+   STARS
+=========================== */
+
+@keyframes starsMove{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:0 1200px;
+
+    }
+
+}
+
+/* ===========================
+   WAVE
+=========================== */
+
+@keyframes wave{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:scale(1.6);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   MUSIC
+=========================== */
+
+@keyframes musicPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.1);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   RING FLOAT
+=========================== */
+
+@keyframes ringFloat{
+
+    0%{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   SPARKLE
+=========================== */
+
+@keyframes sparkle{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(.5);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(.5);
+
+    }
+
+}
+/* ==========================================
+   ANIMATIONS.CSS
+   Part 2
+========================================== */
+
+/* ===========================
+   FALLING PETALS
+=========================== */
+
+@keyframes fallingPetal{
+
+    0%{
+
+        transform:
+        translateY(-120px)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(120vh)
+        translateX(150px)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+
+@keyframes floatingHeart{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(.4);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-700px)
+        translateX(80px)
+        scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   FIREFLIES
+=========================== */
+
+@keyframes firefly{
+
+    0%{
+
+        transform:
+        translate(0,0);
+
+        opacity:.2;
+
+    }
+
+    25%{
+
+        transform:
+        translate(40px,-25px);
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+        translate(-20px,-60px);
+
+    }
+
+    75%{
+
+        transform:
+        translate(30px,-90px);
+
+    }
+
+    100%{
+
+        transform:
+        translate(0,-120px);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   SHOOTING STAR
+=========================== */
+
+@keyframes shootingStar{
+
+    from{
+
+        transform:
+        translateX(-300px)
+        translateY(0);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateX(130vw)
+        translateY(350px);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   CONFETTI
+=========================== */
+
+@keyframes confetti{
+
+    from{
+
+        transform:
+        translateY(-100px)
+        rotate(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   FIREWORK
+=========================== */
+
+@keyframes firework{
+
+    0%{
+
+        transform:scale(.2);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(3);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   SPIN
+=========================== */
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+   SHIMMER
+=========================== */
+
+@keyframes shimmer{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:120%;
+
+    }
+
+}
+
+/* ===========================
+   GLOW
+=========================== */
+
+@keyframes glow{
+
+    0%{
+
+        filter:drop-shadow(0 0 5px #ff4f8b);
+
+    }
+
+    50%{
+
+        filter:drop-shadow(0 0 20px #ff4f8b);
+
+    }
+
+    100%{
+
+        filter:drop-shadow(0 0 5px #ff4f8b);
+
+    }
+
+}
+
+/* ===========================
+   TYPEWRITER CURSOR
+=========================== */
+
+@keyframes blink{
+
+    0%,50%{
+
+        opacity:1;
+
+    }
+
+    51%,100%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   ROTATING RING
+=========================== */
+
+@keyframes rotateRing{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+   CINEMATIC FADE
+=========================== */
+
+@keyframes cinematicFade{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   PARALLAX FLOAT
+=========================== */
+
+@keyframes slowFloat{
+
+    0%{
+
+        transform:
+        translateY(0)
+        translateX(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-25px)
+        translateX(15px);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(0)
+        translateX(0);
+
+    }
+
+}
+
+/* ===========================
+   FADE LEFT
+=========================== */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ===========================
+   FADE RIGHT
+=========================== */
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ===========================
+   SCALE IN
+=========================== */
+
+@keyframes scaleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.6);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   HERO TITLE GLOW
+=========================== */
+
+.hero-content h1{
+
+    animation:
+
+    fadeUp 1.5s ease,
+
+    glow 5s infinite;
+
+}
+
+/* Moon */
+
+.moon{
+
+    animation:
+
+    moonGlow 5s infinite,
+
+    slowFloat 8s ease-in-out infinite;
+
+}
+
+/* Stars */
+
+.stars{
+
+    animation:
+
+    twinkle 3s infinite,
+
+    starsMove 120s linear infinite;
+
+}
+
+/* Scroll Arrow */
+
+.scroll-down{
+
+    animation:
+
+    bounce 2s infinite;
+
+}

@@ -1,0 +1,414 @@
+/* ==========================================
+   RESPONSIVE.CSS
+   Bollywood Love Proposal
+========================================== */
+
+/* ==========================================
+   LARGE TABLETS
+========================================== */
+
+@media (max-width:1200px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .hero-content h1{
+
+        font-size:5rem;
+
+    }
+
+    .future-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:100px 6%;
+
+    }
+
+    .hero-content h1{
+
+        font-size:4rem;
+
+    }
+
+    .hero-content p{
+
+        font-size:1rem;
+
+    }
+
+    .timeline::before{
+
+        left:25px;
+
+    }
+
+    .timeline-item{
+
+        width:100%;
+
+        left:0 !important;
+
+        padding-left:80px;
+
+        padding-right:20px;
+
+    }
+
+    .timeline-item::before{
+
+        left:15px;
+
+    }
+
+    .timeline-item::after{
+
+        left:35px;
+
+        width:30px;
+
+    }
+
+    .reason-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .future-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .proposal-content h1{
+
+        font-size:4rem;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    nav{
+
+        padding:0 6%;
+
+    }
+
+    .logo{
+
+        font-size:1.6rem;
+
+    }
+
+    .hero-content h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero-content h3{
+
+        font-size:1rem;
+
+    }
+
+    .hero-content p{
+
+        line-height:1.8;
+
+    }
+
+    .hero-btn{
+
+        padding:16px 30px;
+
+    }
+
+    .section-title h2{
+
+        font-size:2.8rem;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .future-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .proposal-content h1{
+
+        font-size:3rem;
+
+    }
+
+    .proposal-content h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .proposal-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .counter{
+
+        gap:20px;
+
+    }
+
+    .counter-card{
+
+        width:160px;
+
+        height:160px;
+
+    }
+
+    .counter-card h1{
+
+        font-size:3rem;
+
+    }
+
+    .music-player{
+
+        right:20px;
+
+        bottom:20px;
+
+    }
+
+    #musicBtn{
+
+        width:60px;
+
+        height:60px;
+
+    }
+
+    .letter-box{
+
+        padding:35px;
+
+    }
+
+    .letter-box h2{
+
+        font-size:2.4rem;
+
+    }
+
+    footer h2{
+
+        font-size:2.5rem;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width:576px){
+
+    section{
+
+        padding:80px 5%;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .hero-content h3{
+
+        letter-spacing:2px;
+
+    }
+
+    .hero-content p{
+
+        font-size:.95rem;
+
+    }
+
+    .section-title h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .timeline-content{
+
+        padding:25px;
+
+    }
+
+    .timeline-content h3{
+
+        font-size:1.3rem;
+
+    }
+
+    .gallery-card img{
+
+        height:260px;
+
+    }
+
+    .reason-card{
+
+        padding:25px;
+
+    }
+
+    .future-card{
+
+        padding:35px 20px;
+
+    }
+
+    .proposal-content h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .proposal-content h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .proposal-buttons button{
+
+        width:100%;
+
+    }
+
+    .counter-card{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+    .counter-card h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .letter-box{
+
+        padding:25px;
+
+    }
+
+    .letter-box p{
+
+        font-size:1rem;
+
+    }
+
+    .moon{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+}
+
+/* ==========================================
+   VERY SMALL DEVICES
+========================================== */
+
+@media (max-width:380px){
+
+    .hero-content h1{
+
+        font-size:2rem;
+
+    }
+
+    .section-title h2{
+
+        font-size:2rem;
+
+    }
+
+    .proposal-content h1{
+
+        font-size:2rem;
+
+    }
+
+    .proposal-content h2{
+
+        font-size:1.3rem;
+
+    }
+
+    .counter-card{
+
+        width:120px;
+
+        height:120px;
+
+    }
+
+    .counter-card h1{
+
+        font-size:2rem;
+
+    }
+
+}
