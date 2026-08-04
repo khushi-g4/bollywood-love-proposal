@@ -1,23 +1,25 @@
-import { Sphere } from "@react-three/drei";
-import { Float } from "@react-three/drei";
+import { Float, Sphere } from "@react-three/drei";
+import { useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three";
+
+import moonTexture from "../../assets/images/moon.jpeg";
 
 export default function Moon() {
+  const texture = useLoader(TextureLoader, moonTexture);
+
   return (
     <Float
       speed={1}
       rotationIntensity={0.15}
       floatIntensity={0.5}
     >
-      <Sphere
-        args={[0.65, 64, 64]}
-        position={[4.8, 2.6, 0]}
-      >
+      <Sphere args={[0.65, 128, 128]} position={[4.8, 2.6, 0]}>
         <meshStandardMaterial
-          color="#f8f8f8"
-          emissive="#dbeafe"
-          emissiveIntensity={0.35}
-          roughness={0.9}
+          map={texture}
+          roughness={1}
           metalness={0}
+          emissive="#dbeafe"
+          emissiveIntensity={0.2}
         />
       </Sphere>
     </Float>
