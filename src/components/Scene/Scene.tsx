@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Moon from "./Moon";
 import Stars from "./Stars";
+import TwinklingStars from "./TwinklingStars";
 
 export default function Scene() {
   return (
@@ -17,7 +18,7 @@ export default function Scene() {
         intensity={2}
       />
 
-      <Stars />
+      <TwinklingStars />
 
       <Moon />
     </Canvas>
