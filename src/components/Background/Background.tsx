@@ -1,14 +1,9 @@
-import Moon from "../Moon/Moon";
-import Stars from "../Stars/Stars";
+import Scene from "../Scene/Scene";
 
 export default function Background() {
   return (
-<div className="fixed inset-0 z-0 overflow-hidden bg-slate-950">
-
-      <Stars />
-
-      <Moon />
-
+    <div className="fixed inset-0 bg-slate-950">
+      <Scene />
     </div>
   );
 }
