@@ -1,270 +1,202 @@
-/* ======================================================
+/* ==========================================================
    VARIABLES.CSS
-   Bollywood Love Proposal Website
-   Design System
-====================================================== */
+   Forever Begins Today ❤️
+   Master Design System
+========================================================== */
 
-:root {
+:root{
 
-    /* =========================================
-       COLORS
-    ========================================= */
+/*==========================================================
+COLORS
+==========================================================*/
 
-    --primary: #ff4f8b;
-    --primary-light: #ff7daa;
-    --primary-dark: #d81b60;
+--primary:#ff4f8b;
+--primary-light:#ff78a9;
+--primary-dark:#e31f68;
 
-    --secondary: #ffccd5;
+--secondary:#ffd8e6;
 
-    --accent: #ffd166;
+--accent:#ffd166;
 
-    --gold: #FFD700;
+--gold:#FFD700;
 
-    --rose-gold: #E6B7A9;
+--rose-gold:#E6B7A9;
 
-    --white: #ffffff;
+--white:#ffffff;
 
-    --off-white: #fdfaf9;
+--off-white:#f8f8f8;
 
-    --cream: #fff6ef;
+--cream:#fff9f5;
 
-    --light-pink: #ffe7ef;
+--text:#f3f3f3;
 
-    --soft-pink: #ffdce8;
+--text-light:#cfcfcf;
 
-    --text: #2b1b1b;
+--dark:#05040d;
 
-    --text-light: #777777;
+--dark2:#0b0715;
 
-    --dark: #0d0712;
+--dark3:#12041a;
 
-    --dark-2: #17111d;
+--dark4:#1a0930;
 
-    --dark-3: #251d30;
+--overlay:rgba(0,0,0,.55);
 
-    --overlay: rgba(0,0,0,.55);
+/*==========================================================
+BACKGROUND
+==========================================================*/
 
-    /* =========================================
-       BACKGROUNDS
-    ========================================= */
+--bg-main:
+linear-gradient(
+180deg,
+#030208 0%,
+#09020f 20%,
+#12041a 50%,
+#1a0930 100%
+);
 
-    --bg-main:
-        linear-gradient(
-            180deg,
-            #09020f,
-            #12041a,
-            #1c0828,
-            #100314
-        );
+--bg-card:
+rgba(255,255,255,.08);
 
-    --bg-card:
-        rgba(255,255,255,.08);
+--bg-glass:
+rgba(255,255,255,.12);
 
-    --bg-glass:
-        rgba(255,255,255,.12);
+--bg-navbar:
+rgba(10,8,18,.55);
 
-    --bg-navbar:
-        rgba(20,10,30,.55);
+/*==========================================================
+GLASS
+==========================================================*/
 
-    /* =========================================
-       GLASS EFFECT
-    ========================================= */
+--glass-blur:blur(18px);
 
-    --glass-blur: blur(20px);
+--glass-border:
+1px solid rgba(255,255,255,.15);
 
-    --glass-border:
-        1px solid rgba(255,255,255,.18);
+/*==========================================================
+SHADOWS
+==========================================================*/
 
-    /* =========================================
-       SHADOWS
-    ========================================= */
+--shadow-sm:
+0 5px 15px rgba(0,0,0,.15);
 
-    --shadow-sm:
-        0 4px 12px rgba(0,0,0,.15);
+--shadow-md:
+0 10px 30px rgba(0,0,0,.25);
 
-    --shadow-md:
-        0 10px 30px rgba(0,0,0,.25);
+--shadow-lg:
+0 20px 60px rgba(0,0,0,.45);
 
-    --shadow-lg:
-        0 20px 50px rgba(0,0,0,.45);
+--pink-shadow:
+0 0 25px rgba(255,79,139,.45);
 
-    --pink-shadow:
-        0 0 25px rgba(255,79,139,.45);
+--gold-shadow:
+0 0 20px rgba(255,209,102,.35);
 
-    --gold-shadow:
-        0 0 20px rgba(255,209,102,.35);
+/*==========================================================
+GRADIENTS
+==========================================================*/
 
-    /* =========================================
-       FONTS
-    ========================================= */
+--gradient-love:
+linear-gradient(
+135deg,
+#ff4f8b,
+#ff89b6,
+#ffd1e3
+);
 
-    --font-title:
-        "Great Vibes", cursive;
+--gradient-night:
+linear-gradient(
+180deg,
+#05040d,
+#12041a,
+#1d0930
+);
 
-    --font-heading:
-        "Cinzel", serif;
+--gradient-gold:
+linear-gradient(
+135deg,
+#FFD166,
+#FFD700,
+#FFF2AE
+);
 
-    --font-body:
-        "Poppins", sans-serif;
+/*==========================================================
+FONTS
+==========================================================*/
 
-    /* =========================================
-       FONT SIZES
-    ========================================= */
+--font-title:
+"Great Vibes",cursive;
 
-    --fs-hero: 5rem;
+--font-heading:
+"Cinzel",serif;
 
-    --fs-h1: 3.5rem;
+--font-body:
+"Poppins",sans-serif;
 
-    --fs-h2: 2.7rem;
+/*==========================================================
+FONT SIZE
+==========================================================*/
 
-    --fs-h3: 1.7rem;
+--fs-hero:6rem;
 
-    --fs-body: 1rem;
+--fs-h1:4rem;
 
-    --fs-small: .9rem;
+--fs-h2:3rem;
 
-    /* =========================================
-       BORDER RADIUS
-    ========================================= */
+--fs-h3:2rem;
 
-    --radius-xs: 8px;
+--fs-body:1rem;
 
-    --radius-sm: 12px;
+--fs-small:.9rem;
 
-    --radius-md: 20px;
+/*==========================================================
+SPACING
+==========================================================*/
 
-    --radius-lg: 30px;
+--section-padding:
+140px 8%;
 
-    --radius-xl: 50px;
+--container:
+1300px;
 
-    --radius-circle: 50%;
+/*==========================================================
+RADIUS
+==========================================================*/
 
-    /* =========================================
-       SPACING
-    ========================================= */
+--radius-xs:8px;
 
-    --space-xs: .5rem;
+--radius-sm:15px;
 
-    --space-sm: 1rem;
+--radius-md:25px;
 
-    --space-md: 2rem;
+--radius-lg:40px;
 
-    --space-lg: 4rem;
+--radius-xl:70px;
 
-    --space-xl: 7rem;
+--radius-circle:50%;
 
-    --space-xxl: 10rem;
+/*==========================================================
+TRANSITIONS
+==========================================================*/
 
-    /* =========================================
-       WIDTHS
-    ========================================= */
+--transition:
+all .4s ease;
 
-    --container: 1200px;
+--transition-slow:
+all .8s ease;
 
-    --navbar-height: 80px;
+/*==========================================================
+Z INDEX
+==========================================================*/
 
-    /* =========================================
-       TRANSITIONS
-    ========================================= */
+--z-background:1;
 
-    --transition-fast:
-        .25s ease;
+--z-overlay:5;
 
-    --transition:
-        .4s ease;
+--z-content:20;
 
-    --transition-slow:
-        .8s ease;
+--z-navbar:999;
 
-    /* =========================================
-       BUTTON
-    ========================================= */
-
-    --btn-padding:
-        16px 42px;
-
-    --btn-radius:
-        999px;
-
-    /* =========================================
-       Z-INDEX
-    ========================================= */
-
-    --z-loader: 99999;
-
-    --z-navbar: 999;
-
-    --z-modal: 900;
-
-    --z-overlay: 800;
-
-    --z-content: 100;
-
-    /* =========================================
-       GRADIENTS
-    ========================================= */
-
-    --gradient-love:
-        linear-gradient(
-            135deg,
-            #ff5fa2,
-            #ff80bf,
-            #ffd1dc
-        );
-
-    --gradient-gold:
-        linear-gradient(
-            135deg,
-            #FFD700,
-            #ffeb99
-        );
-
-    --gradient-night:
-        linear-gradient(
-            180deg,
-            #09020f,
-            #12041a,
-            #1e0832
-        );
-
-}
-
-/* =====================================================
-   COMMON VARIABLES
-===================================================== */
-
-body{
-
-    font-family: var(--font-body);
-
-    color: var(--white);
-
-    background: var(--bg-main);
-
-}
-
-.container{
-
-    width: min(90%, var(--container));
-
-    margin-inline:auto;
-
-}
-
-.section{
-
-    padding: var(--space-xxl) 0;
-
-}
-
-.text-center{
-
-    text-align:center;
-
-}
-
-.hidden{
-
-    display:none;
+--z-loader:9999;
 
 }
