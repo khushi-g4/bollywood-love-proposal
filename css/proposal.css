@@ -1,0 +1,348 @@
+/* ==========================================
+   PROPOSAL SECTION
+========================================== */
+
+#proposal{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:140px 8%;
+
+    background:linear-gradient(
+        180deg,
+        #09020f,
+        #13051c,
+        #09020f
+    );
+
+}
+
+/* ===========================
+   Background Overlay
+=========================== */
+
+.proposal-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background:radial-gradient(
+        circle at center,
+        rgba(255,255,255,.08),
+        transparent 60%
+    );
+
+}
+
+.proposal-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   Content
+=========================== */
+
+.proposal-content{
+
+    position:relative;
+
+    z-index:10;
+
+    max-width:900px;
+
+    text-align:center;
+
+}
+
+.proposal-content h3{
+
+    color:var(--accent);
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.proposal-content h1{
+
+    font-family:var(--font-title);
+
+    font-size:5rem;
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.proposal-content p{
+
+    color:#eeeeee;
+
+    line-height:2;
+
+    font-size:1.15rem;
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+
+}
+
+.proposal-content h2{
+
+    font-family:var(--font-heading);
+
+    font-size:2.3rem;
+
+    color:var(--primary);
+
+    margin-bottom:45px;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.proposal-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.proposal-buttons button{
+
+    padding:18px 45px;
+
+    border-radius:999px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.4s;
+
+    cursor:pointer;
+
+}
+
+#yesBtn{
+
+    background:var(--gradient-love);
+
+    color:white;
+
+    box-shadow:0 15px 35px rgba(255,79,139,.35);
+
+}
+
+#yesBtn:hover{
+
+    transform:translateY(-8px) scale(1.08);
+
+    box-shadow:0 20px 50px rgba(255,79,139,.5);
+
+}
+
+#loveBtn{
+
+    background:transparent;
+
+    border:2px solid rgba(255,255,255,.25);
+
+    color:white;
+
+    backdrop-filter:blur(12px);
+
+}
+
+#loveBtn:hover{
+
+    background:rgba(255,255,255,.08);
+
+    transform:translateY(-8px);
+
+}
+
+/* ===========================
+   Decorative Ring
+=========================== */
+
+.proposal-content::before{
+
+    content:"💍";
+
+    position:absolute;
+
+    top:-90px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:4rem;
+
+    animation:ringFloat 3s ease-in-out infinite;
+
+}
+
+/* ===========================
+   Glow Effects
+=========================== */
+
+#proposal::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    top:-180px;
+
+    left:-150px;
+
+    border-radius:50%;
+
+    background:rgba(255,79,139,.08);
+
+    filter:blur(120px);
+
+}
+
+#proposal::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    right:-200px;
+
+    bottom:-200px;
+
+    border-radius:50%;
+
+    background:rgba(255,209,102,.08);
+
+    filter:blur(120px);
+
+}
+
+/* ===========================
+   Celebration Section
+=========================== */
+
+#celebration{
+
+    text-align:center;
+
+    padding:120px 20px;
+
+    background:linear-gradient(
+        180deg,
+        #12041a,
+        #09020f
+    );
+
+}
+
+#celebration h1{
+
+    font-family:var(--font-title);
+
+    font-size:5rem;
+
+    color:white;
+
+}
+
+#celebration p{
+
+    color:#dddddd;
+
+    margin-top:20px;
+
+    font-size:1.2rem;
+
+}
+
+/* ===========================
+   Floating Moon
+=========================== */
+
+.proposal-moon{
+
+    position:absolute;
+
+    top:80px;
+
+    right:8%;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+    0 0 90px rgba(255,255,255,.45),
+
+    0 0 180px rgba(255,255,255,.15);
+
+    opacity:.9;
+
+}
+
+/* ===========================
+   Final Quote
+=========================== */
+
+.final-quote{
+
+    margin-top:70px;
+
+    font-family:var(--font-title);
+
+    font-size:2.5rem;
+
+    color:white;
+
+    opacity:.9;
+
+}
