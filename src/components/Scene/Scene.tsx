@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import Moon from "./Moon";
 import Stars from "./Stars";
 import TwinklingStars from "./TwinklingStars";
+import ShootingStars from "./ShootingStars";
 
 export default function Scene() {
   return (
@@ -19,6 +20,7 @@ export default function Scene() {
       />
 
       <TwinklingStars />
+      <ShootingStars />
 
       <Moon />
     </Canvas>
