@@ -1,0 +1,177 @@
+/* =====================================================
+   RESET.CSS
+   Bollywood Love Proposal Website
+   Author: Khushi ❤️
+===================================================== */
+
+/* Universal Reset */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root HTML */
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Body */
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Images */
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+/* Videos */
+
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* SVG */
+
+svg {
+    display: block;
+}
+
+/* Links */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Lists */
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* Buttons */
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+/* Inputs */
+
+input,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+/* Textarea */
+
+textarea {
+    resize: vertical;
+}
+
+/* Tables */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+}
+
+/* Paragraphs */
+
+p {
+    line-height: 1.6;
+}
+
+/* Horizontal Rule */
+
+hr {
+    border: none;
+}
+
+/* Iframe */
+
+iframe {
+    border: 0;
+}
+
+/* Remove Tap Highlight */
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Selection */
+
+::selection {
+    background: #ff5fa2;
+    color: #ffffff;
+}
+
+/* Scrollbar (Chrome/Edge/Safari) */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #120016;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #ff6fa5,
+        #ff2d75
+    );
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        #ff8db9,
+        #ff4d8d
+    );
+}
+
+/* Focus styles */
+
+:focus-visible {
+    outline: 2px solid #ff8db9;
+    outline-offset: 3px;
+}
