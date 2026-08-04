@@ -8,7 +8,15 @@ export default function Scene() {
         fov: 45,
       }}
     >
-        {/* We will add lights, moon and stars here */}
+      {/* Ambient Light */}
+      <ambientLight intensity={0.4} />
+
+      {/* Moon Light */}
+      <directionalLight
+        position={[5, 5, 5]}
+        intensity={2}
+        color="#ffffff"
+      />
     </Canvas>
   );
 }
