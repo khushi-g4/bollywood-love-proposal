@@ -442,11 +442,7 @@ z-index:25;
 0%{
 
 transform:
-
-translateY(-50px)
-
-translateX(0)
-
+translate3d(0,-100px,0)
 rotate(0deg);
 
 }
@@ -454,11 +450,7 @@ rotate(0deg);
 25%{
 
 transform:
-
-translateY(25vh)
-
-translateX(20px)
-
+translate3d(35px,25vh,0)
 rotate(120deg);
 
 }
@@ -466,36 +458,26 @@ rotate(120deg);
 50%{
 
 transform:
-
-translateY(50vh)
-
-translateX(-30px)
-
-rotate(220deg);
+translate3d(-40px,55vh,0)
+rotate(240deg);
 
 }
 
 75%{
 
 transform:
-
-translateY(75vh)
-
-translateX(30px)
-
-rotate(320deg);
+translate3d(30px,80vh,0)
+rotate(360deg);
 
 }
 
 100%{
 
 transform:
+translate3d(-50px,120vh,0)
+rotate(520deg);
 
-translateY(120vh)
-
-translateX(-40px)
-
-rotate(460deg);
+opacity:0;
 
 }
 
