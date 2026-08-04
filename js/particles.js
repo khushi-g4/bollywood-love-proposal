@@ -1,72 +1,137 @@
 /* ==========================================================
-   CINEMATIC CHERRY BLOSSOM ENGINE
+   CINEMATIC SAKURA ENGINE
+   PART 1
 ========================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+const canvas=document.getElementById("sakura-canvas");
 
-    const front = document.getElementById("petals-front");
-    const back = document.getElementById("petals-back");
+const ctx=canvas.getContext("2d");
 
-    const petals = [
-        "assets/images/petals/petal1.webp",
-        "assets/images/petals/petal2.webp",
-        "assets/images/petals/petal3.webp",
-        "assets/images/petals/petal4.webp",
-        "assets/images/petals/petal5.webp"
-    ];
+function resizeCanvas(){
 
-    function createPetal(layer){
+    canvas.width=window.innerWidth;
 
-        const petal = document.createElement("div");
+    canvas.height=window.innerHeight;
 
-        petal.className = "petal";
+}
 
-        petal.style.backgroundImage =
-            `url(${petals[Math.floor(Math.random()*petals.length)]})`;
+resizeCanvas();
 
-        const size = Math.random()*22 + 12;
+window.addEventListener("resize",resizeCanvas);
 
-        petal.style.width = size+"px";
-        petal.style.height = size+"px";
+const petals=[];
 
-        petal.style.left = Math.random()*100+"vw";
+class Petal{
 
-        petal.style.opacity = Math.random()*0.5 + 0.4;
+    constructor(){
 
-        petal.style.animationDuration =
-            (Math.random()*8+10)+"s";
-
-        petal.style.animationDelay =
-            Math.random()*3+"s";
-
-        petal.style.setProperty("--rotate",
-            Math.random()*720+"deg");
-
-        petal.style.setProperty("--drift",
-            (Math.random()*250-125)+"px");
-
-        layer.appendChild(petal);
-
-        petal.addEventListener("animationend",()=>{
-
-            petal.remove();
-
-            createPetal(layer);
-
-        });
+        this.reset();
 
     }
 
-    for(let i=0;i<45;i++){
+    reset(){
 
-        createPetal(back);
+        this.x=Math.random()*canvas.width;
+
+        this.y=Math.random()*-canvas.height;
+
+        this.size=Math.random()*18+8;
+
+        this.speed=Math.random()*1.5+.5;
+
+        this.angle=Math.random()*360;
+
+        this.rotation=Math.random()*2-1;
+
+        this.opacity=Math.random()*.6+.3;
 
     }
 
-    for(let i=0;i<22;i++){
+    update(){
 
-        createPetal(front);
+        this.y+=this.speed;
+
+        this.angle+=this.rotation;
+
+        if(this.y>canvas.height+50){
+
+            this.reset();
+
+            this.y=-50;
+
+        }
 
     }
 
-});
+    draw(){
+
+        ctx.save();
+
+        ctx.translate(this.x,this.y);
+
+        ctx.rotate(this.angle*Math.PI/180);
+
+        ctx.globalAlpha=this.opacity;
+
+        ctx.fillStyle="#ffc6d9";
+
+        ctx.beginPath();
+
+        ctx.ellipse(
+
+            0,
+
+            0,
+
+            this.size*.4,
+
+            this.size,
+
+            Math.PI/4,
+
+            0,
+
+            Math.PI*2
+
+        );
+
+        ctx.fill();
+
+        ctx.restore();
+
+    }
+
+}
+for(let i=0;i<60;i++){
+
+    petals.push(new Petal());
+
+}
+
+function animate(){
+
+    ctx.clearRect(
+
+        0,
+
+        0,
+
+        canvas.width,
+
+        canvas.height
+
+    );
+
+    petals.forEach(p=>{
+
+        p.update();
+
+        p.draw();
+
+    });
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
