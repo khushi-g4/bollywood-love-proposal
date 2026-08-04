@@ -1,3 +1,4 @@
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { Canvas } from "@react-three/fiber";
 import Moon from "./Moon";
 
@@ -17,6 +18,13 @@ export default function Scene() {
       />
 
       <Moon />
+      <EffectComposer>
+  <Bloom
+    intensity={0.7}
+    luminanceThreshold={0.2}
+    luminanceSmoothing={0.9}
+  />
+</EffectComposer>
     </Canvas>
   );
 }
