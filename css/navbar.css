@@ -1,13 +1,22 @@
 /* ==========================================
    NAVBAR
+   Bollywood Cinematic
 ========================================== */
 
 header{
+
     position:fixed;
+
     top:0;
+
     left:0;
+
     width:100%;
-    z-index:999;
+
+    z-index:1000;
+
+    transition:.5s;
+
 }
 
 nav{
@@ -22,19 +31,11 @@ nav{
 
     align-items:center;
 
-    padding:0 8%;
+    padding:0 7%;
 
-    position:fixed;
+    backdrop-filter:blur(20px);
 
-    top:0;
-
-    left:0;
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    background:rgba(10,5,20,.35);
+    background:rgba(5,5,20,.18);
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
@@ -42,17 +43,25 @@ nav{
 
 }
 
-/* Scroll Effect */
+/* ==========================================
+   SCROLLED NAV
+========================================== */
 
-nav.scrolled{
+header.scrolled nav{
 
-    background:rgba(8,4,15,.90);
+    height:70px;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.45);
+    background:rgba(8,8,25,.88);
+
+    box-shadow:
+
+    0 10px 40px rgba(0,0,0,.35);
 
 }
 
-/* Logo */
+/* ==========================================
+   LOGO
+========================================== */
 
 .logo{
 
@@ -60,9 +69,9 @@ nav.scrolled{
 
     font-size:2rem;
 
-    color:white;
+    color:#fff;
 
-    letter-spacing:2px;
+    letter-spacing:1px;
 
     cursor:pointer;
 
@@ -72,13 +81,15 @@ nav.scrolled{
 
 .logo:hover{
 
-    color:var(--primary);
+    transform:scale(1.05);
 
-    text-shadow:0 0 20px var(--primary);
+    color:var(--primary);
 
 }
 
-/* Navigation */
+/* ==========================================
+   MENU
+========================================== */
 
 nav ul{
 
@@ -86,11 +97,7 @@ nav ul{
 
     align-items:center;
 
-    gap:35px;
-
-}
-
-nav ul li{
+    gap:40px;
 
     list-style:none;
 
@@ -100,7 +107,9 @@ nav ul li a{
 
     position:relative;
 
-    color:white;
+    text-decoration:none;
+
+    color:#fff;
 
     font-size:1rem;
 
@@ -108,11 +117,7 @@ nav ul li a{
 
     transition:.35s;
 
-    letter-spacing:1px;
-
 }
-
-/* Underline */
 
 nav ul li a::after{
 
@@ -128,17 +133,23 @@ nav ul li a::after{
 
     height:2px;
 
-    background:var(--gradient-love);
+    background:linear-gradient(
 
-    transition:.35s;
+        90deg,
 
-    border-radius:999px;
+        #ff4f8b,
+
+        #ffc1d9
+
+    );
+
+    transition:.4s;
 
 }
 
 nav ul li a:hover{
 
-    color:var(--primary);
+    color:#ff8fb8;
 
 }
 
@@ -148,25 +159,21 @@ nav ul li a:hover::after{
 
 }
 
-/* Active Link */
-
-nav ul li a.active{
-
-    color:var(--primary);
-
-}
-
-nav ul li a.active::after{
-
-    width:100%;
-
-}
-
-/* Hamburger */
+/* ==========================================
+   HAMBURGER
+========================================== */
 
 .hamburger{
 
+    width:42px;
+
+    height:42px;
+
     display:none;
+
+    justify-content:center;
+
+    align-items:center;
 
     flex-direction:column;
 
@@ -180,110 +187,66 @@ nav ul li a.active::after{
 
     width:28px;
 
-    height:3px;
-
-    border-radius:20px;
+    height:2px;
 
     background:white;
 
-    transition:.35s;
+    transition:.4s;
 
 }
 
-/* Animation */
-
-.hamburger.active span:nth-child(1){
-
-    transform:translateY(9px) rotate(45deg);
-
-}
-
-.hamburger.active span:nth-child(2){
-
-    opacity:0;
-
-}
-
-.hamburger.active span:nth-child(3){
-
-    transform:translateY(-9px) rotate(-45deg);
-
-}
-
-/* Mobile Menu */
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media(max-width:900px){
 
-    .hamburger{
+nav{
 
-        display:flex;
-
-    }
-
-    nav ul{
-
-        position:fixed;
-
-        top:80px;
-
-        right:-100%;
-
-        width:270px;
-
-        height:calc(100vh - 80px);
-
-        background:rgba(8,4,15,.98);
-
-        display:flex;
-
-        flex-direction:column;
-
-        justify-content:flex-start;
-
-        align-items:center;
-
-        padding-top:50px;
-
-        gap:35px;
-
-        transition:.45s;
-
-    }
-
-    nav ul.active{
-
-        right:0;
-
-    }
+padding:0 6%;
 
 }
 
-/* Glow */
+nav ul{
 
-nav::before{
+position:fixed;
 
-    content:"";
+top:80px;
 
-    position:absolute;
+right:-100%;
 
-    bottom:0;
+width:280px;
 
-    left:0;
+height:100vh;
 
-    width:100%;
+background:rgba(8,8,25,.96);
 
-    height:1px;
+backdrop-filter:blur(25px);
 
-    background:linear-gradient(
+display:flex;
 
-        90deg,
+flex-direction:column;
 
-        transparent,
+justify-content:flex-start;
 
-        rgba(255,255,255,.4),
+padding-top:70px;
 
-        transparent
+gap:35px;
 
-    );
+transition:.5s;
+
+}
+
+nav ul.active{
+
+right:0;
+
+}
+
+.hamburger{
+
+display:flex;
+
+}
 
 }

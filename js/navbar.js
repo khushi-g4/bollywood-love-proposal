@@ -2,115 +2,34 @@
    NAVBAR
 ========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
 
-    const navbar = document.querySelector("nav");
+const header=document.querySelector("header");
 
-    const links = document.querySelectorAll("nav ul li a");
+const hamburger=document.querySelector(".hamburger");
 
-    const hamburger = document.querySelector(".hamburger");
+const menu=document.querySelector("nav ul");
 
-    const navMenu = document.querySelector("nav ul");
+window.addEventListener("scroll",()=>{
 
-    /* ==========================
-       Scroll Effect
-    ========================== */
+if(window.scrollY>60){
 
-    window.addEventListener("scroll", () => {
+header.classList.add("scrolled");
 
-        if (window.scrollY > 60) {
+}
 
-            navbar.classList.add("scrolled");
+else{
 
-        } else {
+header.classList.remove("scrolled");
 
-            navbar.classList.remove("scrolled");
+}
 
-        }
+});
 
-    });
+hamburger.addEventListener("click",()=>{
 
-    /* ==========================
-       Mobile Menu
-    ========================== */
+menu.classList.toggle("active");
 
-    if (hamburger) {
-
-        hamburger.addEventListener("click", () => {
-
-            hamburger.classList.toggle("active");
-
-            navMenu.classList.toggle("active");
-
-        });
-
-    }
-
-    /* ==========================
-       Close Mobile Menu
-    ========================== */
-
-    links.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            if (hamburger) {
-
-                hamburger.classList.remove("active");
-
-            }
-
-            if (navMenu) {
-
-                navMenu.classList.remove("active");
-
-            }
-
-        });
-
-    });
-
-    /* ==========================
-       Active Link on Scroll
-    ========================== */
-
-    const sections = document.querySelectorAll("section[id]");
-
-    function activateNav() {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 120;
-
-            const sectionHeight = section.offsetHeight;
-
-            if (window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight) {
-
-                current = section.getAttribute("id");
-
-            }
-
-        });
-
-        links.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === "#" + current) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    }
-
-    window.addEventListener("scroll", activateNav);
-
-    activateNav();
+});
 
 });
