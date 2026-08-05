@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import Sky from "./Sky";
 
 export default function World() {
   return (
@@ -10,21 +11,15 @@ export default function World() {
           fov: 45,
         }}
       >
-        <color attach="background" args={["#020617"]} />
-
-        <ambientLight intensity={0.3} />
-
-        <directionalLight
-          position={[5, 5, 5]}
-          intensity={1.5}
-        />
-
         <Suspense fallback={null}>
-          {/* Moon */}
-          {/* Stars */}
-          {/* Clouds */}
-          {/* Sakura */}
-          {/* Fireflies */}
+          <Sky />
+
+          <ambientLight intensity={0.35} />
+
+          <directionalLight
+            position={[5, 5, 5]}
+            intensity={1.5}
+          />
         </Suspense>
       </Canvas>
     </div>
