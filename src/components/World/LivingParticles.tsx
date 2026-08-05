@@ -92,7 +92,7 @@ function Particles({ count, mode }: { count: number; mode: ParticleMode }) {
 }
 
 export function LivingParticles({ quality }: WorldProps) {
-  const petalCount = quality === "high" ? 280 : quality === "medium" ? 150 : 55;
-  const fireflyCount = quality === "high" ? 90 : quality === "medium" ? 50 : 22;
+  const petalCount = quality === "ultra" ? 360 : quality === "high" ? 260 : quality === "medium" ? 150 : 55;
+  const fireflyCount = quality === "ultra" ? 120 : quality === "high" ? 82 : quality === "medium" ? 50 : 22;
   return <><Particles count={petalCount} mode="petal" /><Particles count={fireflyCount} mode="firefly" /></>;
 }

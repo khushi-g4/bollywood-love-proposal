@@ -74,6 +74,6 @@ function StarLayer({ count, seed, size, opacity, radius }: LayerProps) {
 }
 
 export function StarField({ quality }: WorldProps) {
-  const count = quality === "high" ? 5600 : quality === "medium" ? 4200 : 1900;
+  const count = quality === "ultra" ? 8500 : quality === "high" ? 6500 : quality === "medium" ? 4400 : 1900;
   return <group><StarLayer count={Math.floor(count * 0.7)} seed={21} size={[0.55, 1.15]} opacity={0.55} radius={44} /><StarLayer count={Math.floor(count * 0.24)} seed={47} size={[0.9, 1.8]} opacity={0.75} radius={30} /><StarLayer count={Math.floor(count * 0.06)} seed={83} size={[1.5, 2.8]} opacity={0.9} radius={22} /></group>;
 }

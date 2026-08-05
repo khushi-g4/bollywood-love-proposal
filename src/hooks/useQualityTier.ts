@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export type QualityTier = "high" | "medium" | "low";
+export type QualityTier = "ultra" | "high" | "medium" | "low";
 
 function getQualityTier(): QualityTier {
   if (typeof window === "undefined") return "high";
@@ -10,7 +10,8 @@ function getQualityTier(): QualityTier {
   const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8;
 
   if (reducedMotion || memory <= 4) return "low";
-  return compact || memory <= 6 ? "medium" : "high";
+  if (compact || memory <= 6) return "medium";
+  return window.innerWidth >= 1280 && memory >= 8 ? "ultra" : "high";
 }
 
 export function useQualityTier() {

@@ -22,7 +22,7 @@ export function Moon() {
         <planeGeometry args={[2, 2]} />
         <shaderMaterial transparent depthWrite={false} blending={AdditiveBlending} vertexShader="varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}" fragmentShader="varying vec2 vUv; void main(){float r=length(vUv-.5)*2.;float a=(1.-smoothstep(.26,1.,r))*0.11;gl_FragColor=vec4(.45,.64,1.,a);}" />
       </mesh>
-      <mesh ref={moonRef} scale={1.22} rotation={[0.12, -0.65, 0.05]} castShadow receiveShadow>
+      <mesh ref={moonRef} scale={1.45} rotation={[0.12, -0.65, 0.05]} castShadow receiveShadow>
         <sphereGeometry args={[1, 128, 128]} />
         <meshStandardMaterial map={colorMap} bumpMap={elevationMap} bumpScale={0.075} roughness={0.88} metalness={0} emissive="#07101e" emissiveIntensity={0.12} />
       </mesh>

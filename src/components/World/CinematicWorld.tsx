@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { CanvasRoot } from "@/components/canvas/CanvasRoot";
 import { useQualityTier } from "@/hooks/useQualityTier";
 import { Atmosphere } from "./Atmosphere";
+import { AmbientSoundscape } from "./AmbientSoundscape";
 import { CameraRig } from "./CameraRig";
 import { LivingParticles } from "./LivingParticles";
 import { Moon } from "./Moon";
@@ -13,8 +14,10 @@ import { StarField } from "./StarField";
 export function CinematicWorld() {
   const quality = useQualityTier();
   return (
-    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-      <CanvasRoot>
+    <>
+      <AmbientSoundscape />
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+        <CanvasRoot>
         <Suspense fallback={null}>
           <Sky />
           <ambientLight intensity={0.34} color="#92a7d1" />
@@ -30,7 +33,8 @@ export function CinematicWorld() {
             <Vignette offset={0.28} darkness={0.78} />
           </EffectComposer>
         </Suspense>
-      </CanvasRoot>
-    </div>
+        </CanvasRoot>
+      </div>
+    </>
   );
 }

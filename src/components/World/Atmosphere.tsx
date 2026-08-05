@@ -7,7 +7,7 @@ import type { WorldProps } from "./types";
 /** Layered raymarched cloud volumes: no billboard or PNG cloud art. */
 export function Atmosphere({ quality }: WorldProps) {
   const cloudBank = useRef<Group>(null);
-  const segments = quality === "high" ? 34 : quality === "medium" ? 22 : 12;
+  const segments = quality === "ultra" ? 42 : quality === "high" ? 30 : quality === "medium" ? 20 : 12;
 
   useFrame(({ clock }) => {
     if (cloudBank.current) cloudBank.current.position.x = Math.sin(clock.getElapsedTime() * 0.025) * 0.35;
