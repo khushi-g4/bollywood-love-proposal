@@ -4,10 +4,10 @@ import { CanvasRoot } from "@/components/canvas/CanvasRoot";
 import { useQualityTier } from "@/hooks/useQualityTier";
 import { Atmosphere } from "./Atmosphere";
 import { CameraRig } from "./CameraRig";
-import { Galaxy } from "./Galaxy";
 import { LivingParticles } from "./LivingParticles";
 import { Moon } from "./Moon";
 import { ShootingStars } from "./ShootingStars";
+import { Sky } from "./Sky";
 import { StarField } from "./StarField";
 
 export function CinematicWorld() {
@@ -16,11 +16,11 @@ export function CinematicWorld() {
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
       <CanvasRoot>
         <Suspense fallback={null}>
-          <color attach="background" args={["#08060d"]} />
-          <ambientLight intensity={0.18} color="#8da4d1" />
+          <Sky />
+          <ambientLight intensity={0.34} color="#92a7d1" />
+          <directionalLight position={[5, 6, 8]} intensity={1.8} color="#c9ddff" castShadow />
           <CameraRig />
           <StarField quality={quality} />
-          <Galaxy quality={quality} />
           <Moon />
           <Atmosphere quality={quality} />
           <ShootingStars quality={quality} />

@@ -1,49 +1,30 @@
 import { useFrame, useLoader } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
-import { AdditiveBlending, Color, TextureLoader, type Mesh, type Texture } from "three";
-import moonTexture from "@/assets/images/moon/moon-source.png";
-
-const keyColor = new Color("#00ff00");
-
-function keyedMoonMaterial(texture: Texture) {
-  texture.colorSpace = "srgb";
-  return {
-    transparent: true,
-    depthWrite: false,
-    onBeforeCompile: (shader: { fragmentShader: string }) => {
-      shader.fragmentShader = shader.fragmentShader.replace(
-        "#include <map_fragment>",
-        `#include <map_fragment>
-         float keyDistance = distance(diffuseColor.rgb, vec3(${keyColor.r.toFixed(3)}, ${keyColor.g.toFixed(3)}, ${keyColor.b.toFixed(3)}));
-         if (keyDistance < 0.32) discard;`,
-      );
-    },
-  };
-}
+import { useRef } from "react";
+import { AdditiveBlending, TextureLoader, type Mesh } from "three";
+import lunarColorTexture from "@/assets/images/moon/lroc-color-2k.jpg";
+import lunarElevationTexture from "@/assets/images/moon/lroc-elevation-1k.jpg";
 
 export function Moon() {
-  const moon = useLoader(TextureLoader, moonTexture);
+  const [colorMap, elevationMap] = useLoader(TextureLoader, [lunarColorTexture, lunarElevationTexture]);
   const moonRef = useRef<Mesh>(null);
-  const material = useMemo(() => keyedMoonMaterial(moon), [moon]);
 
   useFrame(({ clock }) => {
-    if (moonRef.current) moonRef.current.rotation.z = Math.sin(clock.getElapsedTime() * 0.03) * 0.015;
+    if (!moonRef.current) return;
+    const time = clock.getElapsedTime();
+    moonRef.current.rotation.y = time * 0.008;
+    moonRef.current.position.y = Math.sin(time * 0.12) * 0.035;
   });
 
   return (
-    <group position={[-2.7, 1.55, -4.2]}>
-      <pointLight color="#dbe8ff" intensity={8} distance={15} decay={2} />
-      <mesh scale={2.45}>
-        <circleGeometry args={[1, 96]} />
-        <meshBasicMaterial color="#9bb7ff" transparent opacity={0.045} blending={AdditiveBlending} depthWrite={false} />
+    <group position={[3.35, 1.75, -4.8]}>
+      <pointLight position={[1.8, 2.2, 3.8]} color="#d8e8ff" intensity={38} distance={22} decay={2} castShadow />
+      <mesh scale={2.85}>
+        <planeGeometry args={[2, 2]} />
+        <shaderMaterial transparent depthWrite={false} blending={AdditiveBlending} vertexShader="varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}" fragmentShader="varying vec2 vUv; void main(){float r=length(vUv-.5)*2.;float a=(1.-smoothstep(.26,1.,r))*0.11;gl_FragColor=vec4(.45,.64,1.,a);}" />
       </mesh>
-      <mesh scale={1.72}>
-        <circleGeometry args={[1, 96]} />
-        <meshBasicMaterial color="#c6d7ff" transparent opacity={0.09} blending={AdditiveBlending} depthWrite={false} />
-      </mesh>
-      <mesh ref={moonRef} scale={1.15}>
-        <planeGeometry args={[2, 2, 1, 1]} />
-        <meshBasicMaterial map={moon} {...material} />
+      <mesh ref={moonRef} scale={1.22} rotation={[0.12, -0.65, 0.05]} castShadow receiveShadow>
+        <sphereGeometry args={[1, 128, 128]} />
+        <meshStandardMaterial map={colorMap} bumpMap={elevationMap} bumpScale={0.075} roughness={0.88} metalness={0} emissive="#07101e" emissiveIntensity={0.12} />
       </mesh>
     </group>
   );
