@@ -31,8 +31,8 @@ const petalFragmentShader = `
     float petal = 1.0 - smoothstep(0.28, 0.5, length(p));
     petal *= 1.0 - smoothstep(0.32, 0.48, abs(p.y + 0.15));
     if (petal < 0.02) discard;
-    vec3 blush = mix(vec3(0.72, 0.24, 0.43), vec3(1.0, 0.72, 0.81), gl_PointCoord.y);
-    gl_FragColor = vec4(blush, petal * 0.72);
+    vec3 blush = mix(vec3(0.68, 0.34, 0.48), vec3(1.0, 0.76, 0.84), gl_PointCoord.y);
+    gl_FragColor = vec4(blush, petal * 0.42);
   }
 `;
 
@@ -62,7 +62,7 @@ function Particles({ count, mode }: { count: number; mode: ParticleMode }) {
       bases[i * 3 + 2] = randomInRange(random, -1.5, 3);
       positions.set(bases.subarray(i * 3, i * 3 + 3), i * 3);
       phases[i] = random() * Math.PI * 2;
-      sizes[i] = mode === "petal" ? randomInRange(random, 1.7, 4.4) : randomInRange(random, 1.6, 3.5);
+      sizes[i] = mode === "petal" ? randomInRange(random, 0.85, 2.2) : randomInRange(random, 1.35, 2.8);
     }
     const geometry = new BufferGeometry();
     geometry.setAttribute("position", new BufferAttribute(positions, 3));

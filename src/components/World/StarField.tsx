@@ -10,6 +10,7 @@ const vertexShader = `
   varying vec3 vColor;
   varying float vTwinkle;
   uniform float uTime;
+  uniform float uOpacity;
   void main() {
     vColor = color;
     vTwinkle = 0.72 + 0.28 * sin(uTime * (0.55 + fract(aPhase) * 1.45) + aPhase * 6.28318);
@@ -27,7 +28,7 @@ const fragmentShader = `
     float distanceFromCenter = length(p);
     float core = 1.0 - smoothstep(0.10, 0.48, distanceFromCenter);
     float halo = 1.0 - smoothstep(0.0, 0.5, distanceFromCenter);
-    float alpha = core * vTwinkle + halo * 0.20;
+    float alpha = (core * vTwinkle + halo * 0.20) * uOpacity;
     if (alpha < 0.012) discard;
     gl_FragColor = vec4(vColor * (1.0 + core * 0.65), alpha);
   }
@@ -68,12 +69,12 @@ function StarLayer({ count, seed, size, opacity, radius }: LayerProps) {
 
   return (
     <points geometry={geometry} frustumCulled={false}>
-      <shaderMaterial ref={material} vertexColors transparent depthWrite={false} depthTest blending={AdditiveBlending} vertexShader={vertexShader} fragmentShader={fragmentShader} uniforms={{ uTime: { value: 0 } }} opacity={opacity} />
+      <shaderMaterial ref={material} vertexColors transparent depthWrite={false} depthTest blending={AdditiveBlending} vertexShader={vertexShader} fragmentShader={fragmentShader} uniforms={{ uTime: { value: 0 }, uOpacity: { value: opacity } }} />
     </points>
   );
 }
 
 export function StarField({ quality }: WorldProps) {
   const count = quality === "ultra" ? 8500 : quality === "high" ? 6500 : quality === "medium" ? 4400 : 1900;
-  return <group><StarLayer count={Math.floor(count * 0.7)} seed={21} size={[0.55, 1.15]} opacity={0.55} radius={44} /><StarLayer count={Math.floor(count * 0.24)} seed={47} size={[0.9, 1.8]} opacity={0.75} radius={30} /><StarLayer count={Math.floor(count * 0.06)} seed={83} size={[1.5, 2.8]} opacity={0.9} radius={22} /></group>;
+  return <group><StarLayer count={Math.floor(count * 0.72)} seed={21} size={[0.45, 0.95]} opacity={0.42} radius={44} /><StarLayer count={Math.floor(count * 0.24)} seed={47} size={[0.72, 1.4]} opacity={0.58} radius={30} /><StarLayer count={Math.floor(count * 0.04)} seed={83} size={[1.1, 2.25]} opacity={0.78} radius={22} /></group>;
 }

@@ -1,12 +1,20 @@
 import { useFrame, useLoader } from "@react-three/fiber";
-import { useRef } from "react";
-import { AdditiveBlending, TextureLoader, type Mesh } from "three";
+import { useEffect, useRef } from "react";
+import { AdditiveBlending, SRGBColorSpace, TextureLoader, type Mesh } from "three";
 import lunarColorTexture from "@/assets/images/moon/lroc-color-2k.jpg";
 import lunarElevationTexture from "@/assets/images/moon/lroc-elevation-1k.jpg";
 
 export function Moon() {
   const [colorMap, elevationMap] = useLoader(TextureLoader, [lunarColorTexture, lunarElevationTexture]);
   const moonRef = useRef<Mesh>(null);
+
+  useEffect(() => {
+    colorMap.colorSpace = SRGBColorSpace;
+    colorMap.anisotropy = 8;
+    elevationMap.anisotropy = 8;
+    colorMap.needsUpdate = true;
+    elevationMap.needsUpdate = true;
+  }, [colorMap, elevationMap]);
 
   useFrame(({ clock }) => {
     if (!moonRef.current) return;
@@ -23,8 +31,10 @@ export function Moon() {
         <shaderMaterial transparent depthWrite={false} blending={AdditiveBlending} vertexShader="varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}" fragmentShader="varying vec2 vUv; void main(){float r=length(vUv-.5)*2.;float a=(1.-smoothstep(.26,1.,r))*0.11;gl_FragColor=vec4(.45,.64,1.,a);}" />
       </mesh>
       <mesh ref={moonRef} scale={1.45} rotation={[0.12, -0.65, 0.05]} castShadow receiveShadow>
-        <sphereGeometry args={[1, 128, 128]} />
-        <meshStandardMaterial map={colorMap} bumpMap={elevationMap} bumpScale={0.075} roughness={0.88} metalness={0} emissive="#07101e" emissiveIntensity={0.12} />
+        <sphereGeometry args={[1, 160, 160]} />
+        <meshStandardMaterial map={colorMap} bumpMap={elevationMap} bumpScale={0.14} roughness={0.82} metalness={0} color="#f0f4ff" emissive="#050b14" emissiveIntensity={0.06} onBeforeCompile={(shader) => {
+          shader.fragmentShader = shader.fragmentShader.replace("#include <map_fragment>", "#include <map_fragment>\ndiffuseColor.rgb = clamp((diffuseColor.rgb - 0.5) * 1.38 + 0.5, 0.0, 1.0);");
+        }} />
       </mesh>
     </group>
   );
