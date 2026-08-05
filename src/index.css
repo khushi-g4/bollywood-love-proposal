@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", ui-serif, serif;
+  --font-sans: "Poppins", ui-sans-serif, sans-serif;
+  --font-script: "Caveat", cursive;
+  --color-rose-300: #ff9dbc;
+  --color-rose-400: #ff6f9c;
+  --color-gold-400: #e3b873;
+}
+
+html, body, #root {
+  height: 100%;
+  background: #050814;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #eef1fb;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 111, 156, 0.35);
+}
