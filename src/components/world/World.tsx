@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { EffectComposer, Bloom, Vignette, ToneMapping } from "@react-three/postprocessing";
 import { Moon } from "./Moon";
 import { StarField, ShootingStars } from "./StarField";
 import { Clouds } from "./Clouds";
@@ -34,7 +33,7 @@ function Ground() {
 
 export function World() {
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="fixed inset-0 z-0">
       <Canvas
         gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}
         camera={{ fov: 55, near: 0.1, far: 300, position: [0, 1.6, 8] }}
@@ -54,12 +53,6 @@ export function World() {
         </Suspense>
 
         <CameraRig />
-
-        <EffectComposer>
-          <Bloom intensity={0.9} luminanceThreshold={0.15} luminanceSmoothing={0.9} mipmapBlur />
-          <ToneMapping />
-          <Vignette eskil={false} offset={0.15} darkness={0.7} />
-        </EffectComposer>
       </Canvas>
     </div>
   );
