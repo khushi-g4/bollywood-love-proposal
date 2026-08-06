@@ -21,6 +21,10 @@ interface SceneState {
   setMusicPlaying: (v: boolean) => void;
   intensity: number; // 0 -> 1, drives moon brightness / cloud speed / blossom density
   setIntensity: (v: number) => void;
+  celebrating: boolean; // true while the hearts/petals celebration overlay is showing
+  celebrationSeed: number; // bumped each trigger so particle bursts re-randomize
+  setCelebrating: (v: boolean) => void;
+  triggerCelebration: () => void;
 }
 
 export const useSceneStore = create<SceneState>((set) => ({
@@ -34,4 +38,9 @@ export const useSceneStore = create<SceneState>((set) => ({
   setMusicPlaying: (musicPlaying) => set({ musicPlaying }),
   intensity: 0.4,
   setIntensity: (intensity) => set({ intensity }),
+  celebrating: false,
+  celebrationSeed: 0,
+  setCelebrating: (celebrating) => set({ celebrating }),
+  triggerCelebration: () =>
+    set((s) => ({ celebrating: true, celebrationSeed: s.celebrationSeed + 1, intensity: 1 })),
 }));

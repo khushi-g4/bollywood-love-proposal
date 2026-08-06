@@ -12,14 +12,28 @@
 html, body, #root {
   height: 100%;
   background: #050814;
+  overflow: hidden;
 }
 
 body {
   font-family: var(--font-sans);
   color: #eef1fb;
-  overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 ::selection {
   background: rgba(255, 111, 156, 0.35);
+}
+
+@layer utilities {
+  /* Strong shadow for larger headings/body text sitting over the night scene */
+  .text-glow {
+    text-shadow:
+      0 2px 16px rgba(0, 0, 0, 0.85),
+      0 1px 4px rgba(0, 0, 0, 0.9);
+  }
+  /* Lighter shadow for small labels/buttons */
+  .text-glow-sm {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+  }
 }
